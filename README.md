@@ -842,3 +842,14 @@ $ go run . livecompare
 2024/12/17 16:46:25 89/90 images in common are identical
 ```
 </details>
+
+## TODO
+- Add ability to compare two scans in isolation vs. pulling all images.
+  - ie: compare the output `roxctl image scan --format json <image>` from two different images, scanners, etc.
+- Change the output format to mirror `diff` or similar
+- Use objects from the stackrox/stackrox in marshall / comparisions instead of creating new objects
+- Allow differnt output formats (such as json, html, etc.)
+- Modify the return code if differences exist
+- Allow for customizing what fields are compared (for example, if only care about 'was CVE detected' and don't care about 'description' or 'update dates'), or if don't care about CVEs and just want to components + verisons
+- Allow for customizing comparisions, such that two dates are considered equal if they are from the same day (vs. second)
+- Include 'duplicate' entires in the comparision (ie: same CVE twice for the same component - currently is squashed)
